@@ -146,21 +146,37 @@ class OnboardingScreen extends StatelessWidget {
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        colors: [Constants.kPinkColor.withOpacity(0.5), Constants.kGreenColor.withOpacity(0.5)],
+                        colors: [
+                          Constants.kPinkColor.withOpacity(0.5),
+                          Constants.kGreenColor.withOpacity(0.5)
+                        ],
                       ),
                     ),
                     child: const Center(
                       child: Text(
                         'Sign Up',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Constants.kWhiteColor
-                      ),),
+                        style: TextStyle(
+                            fontSize: 14, color: Constants.kWhiteColor),
+                      ),
                     ),
                   ),
                 ),
                 const Spacer(),
-
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    3, 
+                    (index) => Container(
+                    height: 7,
+                    width: 7,
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: index==0 ? Constants.kGreenColor : Constants.kWhiteColor.withOpacity(0.2),
+                    ),
+                  )),
+                ),
+                SizedBox(height: screenHeight*0.01,)
               ],
             ))
           ],
