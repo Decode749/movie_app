@@ -19,6 +19,7 @@ class OnboardingScreen extends StatelessWidget {
         width: screenWidth,
         height: screenHeight,
         child: Stack(
+          alignment: Alignment.center,
           children: [
             Positioned(
                 top: screenHeight * 0.1,
@@ -158,6 +159,8 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                const Spacer(),
+
               ],
             ))
           ],
