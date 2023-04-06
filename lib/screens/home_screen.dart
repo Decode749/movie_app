@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:movie_app/components/search_field_widget.dart';
 import 'package:movie_app/constant.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -93,11 +94,11 @@ class _HomeScreenState extends State<HomeScreen> {
               SafeArea(
                   bottom: false,
                   child: ListView(
-                    children: const [
-                      SizedBox(
+                    children: [
+                      const SizedBox(
                         height: 24,
                       ),
-                      Text(
+                      const Text(
                         'What would you\nlike to watch?',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -105,9 +106,45 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Constants.kWhiteColor,
                             fontWeight: FontWeight.w700),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
+                      const SearchFieldWidget(
+                          padding: EdgeInsets.symmetric(horizontal: 20)),
+                      const SizedBox(
+                        height: 39,
+                      ),
+                      const Text(
+                        'New Movies',
+                        style: TextStyle(
+                          color: Constants.kWhiteColor,
+                          fontSize: 17,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 37,
+                      ),
+                      SizedBox(
+                        height: 160,
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            String mask;
+                            if(index == 0)
+                            {
+                              mask = constants
+                            }
+                            return GestureDetector(
+                              child: Container(
+                                
+                              ),
+                            );
+                          },
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: newMovies.length,
+                        ),
+                       ),
+                      )
                     ],
                   ))
             ],
